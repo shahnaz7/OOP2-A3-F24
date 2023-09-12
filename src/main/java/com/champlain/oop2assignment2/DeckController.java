@@ -1,14 +1,35 @@
 package com.champlain.oop2assignment2;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 
-public class HelloController {
+public class DeckController {
     @FXML
-    private Label welcomeText;
+    private TextArea aDeckTextArea;
+
+    private final Deck aDeck = new Deck();
+
+    public void initialize() {
+        this.displayDeck();
+    }
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    protected void onShuffleButtonClick() {
+        this.aDeck.shuffle();
+        this.displayDeck();
+    }
+
+    @FXML
+    protected void onSortButtonClick() {
+        aDeckTextArea.setText("This does not sort anything yet.");
+    }
+
+    @FXML
+    protected void onShowButtonClick() {
+        aDeckTextArea.setText("This does not step through anything yet.");
+    }
+
+    private void displayDeck () {
+        this.aDeckTextArea.setText(this.aDeck.toString());
     }
 }

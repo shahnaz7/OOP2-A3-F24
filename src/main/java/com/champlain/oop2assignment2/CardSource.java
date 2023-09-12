@@ -1,3 +1,5 @@
+package com.champlain.oop2assignment2;
+
 public interface CardSource {
     /**+
      * Returns a card from the source.

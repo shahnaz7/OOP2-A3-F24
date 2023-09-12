@@ -1,11 +1,22 @@
+package com.champlain.oop2assignment2;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Deck implements CardSource {
     List<Card> aCards = new ArrayList<Card>();
 
-    public void shuffle() {
+    public Deck() {
+        for (Rank currentRank : Rank.values()) {
+            for (Suit currentSuit : Suit.values()) {
+                this.aCards.add(new Card(currentRank, currentSuit));
+            }
+        }
+    }
 
+    public void shuffle() {
+        Collections.shuffle(this.aCards);
     }
 
     public Card draw() {
@@ -13,10 +24,17 @@ public class Deck implements CardSource {
         Card myCard = this.aCards.get(last);
         this.aCards.remove(last);
         return myCard;
-
     }
 
     public boolean isEmpty() {
         return this.aCards.isEmpty();
+    }
+
+    public String toString() {
+        String result = "";
+        for (Card currentCard : this.aCards) {
+            result += currentCard.toString() + "\n";
+        }
+        return result;
     }
 }
