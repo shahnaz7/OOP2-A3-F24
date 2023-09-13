@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Deck implements CardSource {
-    List<Card> aCards = new ArrayList<Card>();
+    private final List<Card> aCards = new ArrayList<Card>();
 
     public Deck() {
         for (Rank currentRank : Rank.values()) {
