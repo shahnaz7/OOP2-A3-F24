@@ -1,6 +1,7 @@
 package com.champlain.oop2assignment2;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
 public class DeckController {
@@ -9,6 +10,9 @@ public class DeckController {
 
     @FXML
     private TextArea aHandTextArea;
+
+    @FXML
+    private Label aScoreLabel;
 
     private final Deck aDeck = new Deck();
 
@@ -30,8 +34,8 @@ public class DeckController {
     }
 
     @FXML
-    protected void onShowButtonClick() {
-        aDeckTextArea.setText("This does not step through anything yet.");
+    protected void onScoreButtonClick() {
+        aScoreLabel.setText("Not implemented.");
     }
 
     @FXML
