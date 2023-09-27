@@ -2,9 +2,10 @@ package com.champlain.oop2assignment2;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
-public class Deck implements CardSource {
+public class Deck extends CardCollection implements CardSource {
     private final List<Card> aCards = new ArrayList<Card>();
 
     public Deck() {
@@ -30,11 +31,7 @@ public class Deck implements CardSource {
         return this.aCards.isEmpty();
     }
 
-    public String toString() {
-        String result = "";
-        for (Card currentCard : this.aCards) {
-            result += currentCard.toString() + "\n";
-        }
-        return result;
+    public Iterator<Card> iterator() {
+        return this.aCards.iterator();
     }
 }
