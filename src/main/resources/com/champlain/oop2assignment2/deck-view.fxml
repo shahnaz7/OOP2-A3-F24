@@ -2,18 +2,36 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="com.champlain.oop2assignment2.DeckController">
+<VBox alignment="CENTER" prefHeight="297.0" prefWidth="530.0" spacing="20.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.champlain.oop2assignment2.DeckController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
-   <TextArea fx:id="aDeckTextArea" prefHeight="200.0" prefWidth="200.0" />
-   <GridPane>
+   <HBox alignment="CENTER" prefHeight="214.0" prefWidth="490.0" spacing="10.0">
+      <children>
+         <VBox prefHeight="211.0" prefWidth="200.0">
+            <children>
+               <Label text="Deck" />
+               <TextArea fx:id="aDeckTextArea" prefHeight="190.0" prefWidth="203.0" />
+            </children>
+         </VBox>
+         <Button fx:id="aDrawButton" mnemonicParsing="false" onAction="#onDrawButtonClick" text="Draw" textAlignment="CENTER" />
+         <VBox prefHeight="211.0" prefWidth="200.0">
+            <children>
+               <Label text="Hand" />
+               <TextArea fx:id="aHandTextArea" prefHeight="190.0" prefWidth="180.0" />
+            </children>
+         </VBox>
+      </children>
+   </HBox>
+   <GridPane prefWidth="360.0">
      <columnConstraints>
        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

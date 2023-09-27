@@ -7,16 +7,21 @@ public class DeckController {
     @FXML
     private TextArea aDeckTextArea;
 
+    @FXML
+    private TextArea aHandTextArea;
+
     private final Deck aDeck = new Deck();
 
+    private final Hand aHand = new Hand();
+
     public void initialize() {
-        this.displayDeck();
+        this.displayCardCollections();
     }
 
     @FXML
     protected void onShuffleButtonClick() {
         this.aDeck.shuffle();
-        this.displayDeck();
+        this.displayCardCollections();
     }
 
     @FXML
@@ -29,7 +34,16 @@ public class DeckController {
         aDeckTextArea.setText("This does not step through anything yet.");
     }
 
-    private void displayDeck () {
+    @FXML
+    protected void onDrawButtonClick() {
+        if (!this.aDeck.isEmpty()) {
+            this.aHand.addCard(aDeck.draw());
+        }
+        this.displayCardCollections();
+    }
+
+    private void displayCardCollections () {
         this.aDeckTextArea.setText(this.aDeck.toString());
+        this.aHandTextArea.setText(this.aHand.toString());
     }
 }
