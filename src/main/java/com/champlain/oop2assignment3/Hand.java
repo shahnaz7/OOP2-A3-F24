@@ -1,15 +1,11 @@
-package com.champlain.oop2assignment2;
+package com.champlain.oop2assignment3;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
 public class Hand extends CardCollection {
-    private final List<Card> aCards = new ArrayList<Card>();
-
-    public Hand() {
-    }
+    private final List<Card> aCards = new ArrayList<>();
 
     public void addCard(Card pCard) {
         this.aCards.add(pCard);

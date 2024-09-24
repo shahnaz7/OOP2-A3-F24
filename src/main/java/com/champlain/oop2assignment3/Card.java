@@ -1,4 +1,4 @@
-package com.champlain.oop2assignment2;
+package com.champlain.oop2assignment3;
 
 public class Card {
     private final Suit aSuit;
@@ -20,6 +20,6 @@ public class Card {
 
     @Override
     public String toString() {
-        return this.aRank + " of " + this.aSuit;
+        return this.getRank() + " of " + this.getSuit();
     }
 }

@@ -1,4 +1,4 @@
-package com.champlain.oop2assignment2;
+package com.champlain.oop2assignment3;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Deck extends CardCollection implements CardSource {
-    private final List<Card> aCards = new ArrayList<Card>();
+    private final List<Card> aCards = new ArrayList<>();
 
     public Deck() {
         for (Rank currentRank : Rank.values()) {
