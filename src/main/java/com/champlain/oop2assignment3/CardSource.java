@@ -5,7 +5,7 @@ package com.champlain.oop2assignment3;
  * Cards can only be drawn if the collection is not empty.
  */
 public interface CardSource {
-    /**+
+    /**
      * Returns a card from the source.
      *
      * @return The next available card.

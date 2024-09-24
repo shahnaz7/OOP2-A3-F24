@@ -11,6 +11,12 @@ import java.io.IOException;
  * Launches the test application when executed.
  */
 public class DeckApplication extends Application {
+    /**
+     * Initializes the main stage and sets up the user interface.
+     *
+     * @param pStage the primary stage for this application
+     * @throws IOException if the FXML file cannot be loaded
+     */
     @Override
     public void start(Stage pStage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(DeckApplication.class.getResource("deck-view.fxml"));
