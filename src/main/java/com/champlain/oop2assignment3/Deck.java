@@ -11,6 +11,7 @@ import java.util.*;
  */
 public class Deck extends CardCollection implements CardSource {
 
+    private static Deck instance; // Singleton instance
     /**
      * The list of cards in the deck.
      */
@@ -26,6 +27,13 @@ public class Deck extends CardCollection implements CardSource {
                 this.aCards.add(new Card(currentRank, currentSuit));
             }
         }
+    }
+
+    public static Deck getInstance() {
+        if (instance == null) {
+            instance = new Deck();
+        }
+        return instance;
     }
 
 
@@ -59,5 +67,14 @@ public class Deck extends CardCollection implements CardSource {
      */
     public Iterator<Card> iterator() {
         return this.aCards.iterator();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (Card card : aCards) {
+            sb.append(card.toString()).append("\n"); // Append each card and a newline
+        }
+        return sb.toString();
     }
 }
