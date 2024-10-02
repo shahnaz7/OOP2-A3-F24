@@ -69,7 +69,12 @@ public class Deck extends CardCollection implements CardSource {
         return this.aCards.iterator();
     }
 
+    @Override
     public String toString() {
-        return this.aCards.toString();
+        StringBuilder sb = new StringBuilder();
+        for (Card card : aCards) {
+            sb.append(card.toString()).append("\n"); // Append each card and a newline
+        }
+        return sb.toString();
     }
 }
