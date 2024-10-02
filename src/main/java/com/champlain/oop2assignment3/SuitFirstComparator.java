@@ -5,9 +5,9 @@ import java.util.Comparator;
 public class SuitFirstComparator  implements Comparator<Card> {
 
     @Override
-    public int compare(Card c1, Card c2) {
+    public int compare(Card pc1, Card pc2) {
         // Compare only by suit
-        return c1.getSuit().compareTo(c2.getSuit());
+        return pc1.getSuit().compareTo(pc2.getSuit());
     }
 
 }
