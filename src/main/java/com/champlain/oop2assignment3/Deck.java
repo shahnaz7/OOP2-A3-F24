@@ -1,9 +1,6 @@
 package com.champlain.oop2assignment3;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * Represents a deck of playing cards.
@@ -13,6 +10,7 @@ import java.util.List;
  * </p>
  */
 public class Deck extends CardCollection implements CardSource {
+
     /**
      * The list of cards in the deck.
      */
@@ -30,12 +28,18 @@ public class Deck extends CardCollection implements CardSource {
         }
     }
 
+
     /**
      * Shuffles the cards in this deck randomly.
      */
     public void shuffle() {
         Collections.shuffle(this.aCards);
     }
+
+    public void sort(Comparator<Card> comparator) {
+        Collections.sort(this.aCards, comparator);
+    }
+
 
     public Card draw() {
         int last = this.aCards.size()-1;
