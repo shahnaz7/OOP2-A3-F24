@@ -51,7 +51,7 @@ public class DeckController {
     /**
      * The deck of cards being managed by this controller.
      */
-    private final Deck aDeck = new Deck();
+    private final Deck aDeck = Deck.getInstance();
 
     /**
      * The hand of cards being managed by this controller.
@@ -90,7 +90,7 @@ public class DeckController {
             Alert selectionErrorAlert = new Alert(Alert.AlertType.ERROR, "Please choose a sorting strategy first.");
             selectionErrorAlert.showAndWait();
         } else {
-            Deck deck = new Deck();
+            Deck deck = Deck.getInstance();
 
             switch (choice) {
                 case "Rank First":
