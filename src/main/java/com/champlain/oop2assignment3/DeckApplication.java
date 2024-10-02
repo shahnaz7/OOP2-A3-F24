@@ -24,7 +24,9 @@ public class DeckApplication extends Application {
         pStage.setTitle("Hello!");
         pStage.setScene(scene);
         pStage.show();
+       
     }
+
 
     /**
      * Main method executed on launch.

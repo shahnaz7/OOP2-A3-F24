@@ -53,4 +53,19 @@ public class Card {
     public String toString() {
         return this.getRank() + " of " + this.getSuit();
     }
+
+    @Override
+    public boolean equals(Object obj){
+        if (this == obj) return true;
+
+        if (!(obj instanceof Card)) return false;
+
+        Card otherCard = (Card) obj;
+        return this.getRank() == otherCard.getRank() && this.getSuit() == otherCard.getSuit();
+    }
+
+    @Override
+    public int hashCode(){
+        return 31 * this.aRank.hashCode() + this.aSuit.hashCode();
+    }
 }
