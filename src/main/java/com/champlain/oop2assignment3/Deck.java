@@ -21,7 +21,7 @@ public class Deck extends CardCollection implements CardSource {
      * Constructs a new Deck containing all standard playing cards.
      * The deck is initialized with one of each rank and suit combination.
      */
-    public Deck() {
+    private Deck() {
         for (Rank currentRank : Rank.values()) {
             for (Suit currentSuit : Suit.values()) {
                 this.aCards.add(new Card(currentRank, currentSuit));
@@ -73,7 +73,7 @@ public class Deck extends CardCollection implements CardSource {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         for (Card card : aCards) {
-            sb.append(card.toString()).append("\n"); // Append each card and a newline
+            sb.append(card.toString()).append("\n");
         }
         return sb.toString();
     }
