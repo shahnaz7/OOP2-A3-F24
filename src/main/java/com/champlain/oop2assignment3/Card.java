@@ -55,12 +55,12 @@ public class Card {
     }
 
     @Override
-    public boolean equals(Object obj){
-        if (this == obj) return true;
+    public boolean equals(Object pObj){
+        if (this == pObj) return true;
 
-        if (!(obj instanceof Card)) return false;
+        if (!(pObj instanceof Card)) return false;
 
-        Card otherCard = (Card) obj;
+        Card otherCard = (Card) pObj;
         return this.getRank() == otherCard.getRank() && this.getSuit() == otherCard.getSuit();
     }
 

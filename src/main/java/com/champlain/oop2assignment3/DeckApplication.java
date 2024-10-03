@@ -24,7 +24,7 @@ public class DeckApplication extends Application {
         pStage.setTitle("Hello!");
         pStage.setScene(scene);
         pStage.show();
-       
+
     }
 
 
@@ -33,6 +33,16 @@ public class DeckApplication extends Application {
      * @param pArgs Additional program arguments. Not used.
      */
     public static void main(String[] pArgs) {
+
+        // to test the equals feature
+        Card card1 = new Card(Rank.ACE, Suit.CLUBS);
+        Card card2 = new Card(Rank.ACE, Suit.CLUBS);
+        Card card3 = new Card(Rank.KING, Suit.HEARTS);
+
+        System.out.println(card1.equals(card2)); 
+        System.out.println(card1.equals(card3));
+
         launch();
+
     }
 }
