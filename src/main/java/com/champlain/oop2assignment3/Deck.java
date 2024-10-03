@@ -1,9 +1,6 @@
 package com.champlain.oop2assignment3;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * Represents a deck of playing cards.
@@ -13,6 +10,8 @@ import java.util.List;
  * </p>
  */
 public class Deck extends CardCollection implements CardSource {
+
+    private static Deck instance; // Singleton instance
     /**
      * The list of cards in the deck.
      */
@@ -22,13 +21,21 @@ public class Deck extends CardCollection implements CardSource {
      * Constructs a new Deck containing all standard playing cards.
      * The deck is initialized with one of each rank and suit combination.
      */
-    public Deck() {
+    private Deck() {
         for (Rank currentRank : Rank.values()) {
             for (Suit currentSuit : Suit.values()) {
                 this.aCards.add(new Card(currentRank, currentSuit));
             }
         }
     }
+
+    public static Deck getInstance() {
+        if (instance == null) {
+            instance = new Deck();
+        }
+        return instance;
+    }
+
 
     /**
      * Shuffles the cards in this deck randomly.
@@ -37,12 +44,19 @@ public class Deck extends CardCollection implements CardSource {
         Collections.shuffle(this.aCards);
     }
 
+    public void sort(Comparator<Card> comparator) {
+        Collections.sort(this.aCards, comparator);
+    }
+
+
     public Card draw() {
         int last = this.aCards.size()-1;
         Card myCard = this.aCards.get(last);
         this.aCards.remove(last);
         return myCard;
     }
+
+
 
     public boolean isEmpty() {
         return this.aCards.isEmpty();
@@ -55,5 +69,14 @@ public class Deck extends CardCollection implements CardSource {
      */
     public Iterator<Card> iterator() {
         return this.aCards.iterator();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (Card card : aCards) {
+            sb.append(card.toString()).append("\n");
+        }
+        return sb.toString();
     }
 }
