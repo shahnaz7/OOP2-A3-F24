@@ -56,12 +56,6 @@ public class Deck extends CardCollection implements CardSource {
         return myCard;
     }
 
-    public void sort(Comparator<Card> comparator){
-
-
-        Collections.sort(this.aCards, comparator);
-
-    }
 
 
     public boolean isEmpty() {
